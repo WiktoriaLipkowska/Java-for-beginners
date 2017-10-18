@@ -1,0 +1,57 @@
+/*
+ * Skapa ett program som ber användaren ange 10 tal. Talen	sparas i en array och 	   *efteråt visa högsta och lägsta inmatade värde samt medelvärdet av samtliga inmatningar.
+ */
+package veck4_o_2_ar;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author wiktorialipkowska
+ */
+public class Veck4_o_2_ar {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+     Scanner input = new Scanner(System.in);
+    int [] result = new int[4]; // how many ing we can add 
+    int [] arr = new int[100]; //max number for input
+    int sum = 0;
+    int min = 0; 
+    int max = 0; 
+          
+    
+    Boolean error = false;
+    int i,temp = 0;
+    System.out.println("Enter the integers between 1 and 100: ");
+    
+    //Initialize num[] array with user input
+    for(i=0; i < result.length; i++){
+        result[i] = input.nextInt();
+        //expected input will end when user enters zero
+        if(result[i] == 0){
+            break;
+        }
+    }//end of for loop
+    
+       for (i = 0 ; i < result.length; i++){
+       sum+= result[i];
+       if (min > result [i]){
+       min = result[i];
+       }
+       if (max < result [i]){
+       max = result[i];
+       }
+    }
+       
+       double average = (double) sum / result.length;
+       
+        System.out.printf("    min:  " + min);
+        System.out.printf("%n    max:  " + max);
+        System.out.printf("%naverage:  %.1f", average);
+       
+}//end of main
+}//end of CountOccurrenceOfNumbers
+
