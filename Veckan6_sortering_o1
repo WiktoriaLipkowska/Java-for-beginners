@@ -1,0 +1,43 @@
+/*
+ * 1. Skapa ett program där användaren kan ange 5 tal och därefter visar programmet dem sorterade.
+Du ska nu ange 5 valfria tal
+Ange tal nr 1: 21
+Ange tal nr 2: 18
+Ange tal nr 3: 34
+Ange tal nr 4: 13
+Ange tal nr 5: 15
+13, 15, 18, 21, 34
+ */
+package veckan6_o1.pkg1;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ *
+ * @author wiktorialipkowska
+ */
+public class Veckan6_o11 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); 
+        int [] arr = new int[100]; //max number for input
+        int j,i,temp = 0;
+        System.out.println("Du ska nu ange 5 valfria tal");
+        
+        int result[] = new int[5];// how many ing we can add
+        for (j = 0; j < 5; j++) {
+            System.out.print("Ange tal nr " + (j+1) + ": ");
+            result[j] = input.nextInt();
+            }
+        
+        Arrays.sort(result);// Visa resultatet
+        for (int number=0; number<result.length;number++) {
+        System.out.print(result[number] +" "); }
+        System.out.println();
+    }
+    
+}
